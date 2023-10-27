@@ -1,11 +1,10 @@
-import './App.css';
-import Counter from './components/counter';
+import React from 'react';
+import NewsList from './components/NewsList';
 
 function App() {
   return (
-    <div className="App bg-sky-500">
-      <Counter/>
-        
+    <div className="App">
+      <NewsList />
     </div>
   );
 }
