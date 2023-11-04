@@ -1,3 +1,9 @@
+/* Import the Mullish font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mullish&display=swap');
+
+/* Your other CSS rules go here */
+
+
 .App {
   text-align: center;
 }
@@ -5,6 +11,10 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.text-xl {
+  font-family: 'Mullish', sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {

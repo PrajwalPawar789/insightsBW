@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Routes and Route
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import MagazineSection from './components/MagazineSection';
@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/magazine" element={<MagazineSection />} />
       </Routes>
     </React.StrictMode>
-  </Router>,
+  </Router>
 );
 
 reportWebVitals();

@@ -1,56 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import data from '../data'; // Assuming data is exported from a separate file
+import Navbar from './Navbar';
+import Footer from './Footer';
 
-const MagazineSection = () => {
-  const [magazineData, setMagazineData] = useState([]);
-  const apiKey = 'yZI9SnIBWUsEiEByn9NO4VWlrfIAFqSf';
-
-  useEffect(() => {
-    const fetchMagazineData = async () => {
-      try {
-        const response = await fetch(
-          `https://api.nytimes.com/svc/magazine/v3/all/0.json?api-key=${apiKey}`
-        );
-
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        const data = await response.json();
-        setMagazineData(data.results);
-      } catch (error) {
-        console.error('Error fetching magazine data:', error);
-      }
-    };
-
-    fetchMagazineData();
-  }, [apiKey]);
-
+const Magazine = () => {
+  const imglink = "https://cdn.thecodehelp.in/Agra.jpeg";
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">New York Times Magazine</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {magazineData.map((article) => (
-          <div key={article.title} className="max-w-sm rounded overflow-hidden shadow-lg">
-            <img src={article.multimedia[0]?.url} alt={article.title} className="w-full h-48 object-cover" />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">{article.title}</div>
-              <p className="text-gray-700 text-base">{article.abstract}</p>
-            </div>
-            <div className="px-6 py-4">
-              <a
-                href={article.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:underline"
-              >
-                Read More
-              </a>
-            </div>
+      <Navbar/>
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-bold my-4 text-center">Explore Our Magazine</h1>
+      <p className="mb-6 text-lg text-center text-gray-600">
+        Dive into a world of knowledge and inspiration with our collection of articles and features.
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {data.map((item, index) => (
+          <div key={index} className="bg-white rounded-lg p-4 shadow-md">
+            <img src={imglink} alt={item.title} className="w-full h-44 object-cover rounded-md mb-4" />
+            <h2 className="text-lg font-semibold mb-2">{item.title}</h2>
+            <p className="text-gray-500 text-sm">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla dui at lectus posuere, a tincidunt tortor vulputate.
+            </p>
           </div>
         ))}
       </div>
     </div>
+    <Footer/>
+    </div>
   );
 };
 
-export default MagazineSection;
+export default Magazine;
