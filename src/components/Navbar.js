@@ -12,7 +12,7 @@ function Navbar() {
           {/* <IoReorderThreeSharp className="mr-2  text-black text-2xl font-bold" /> */}
           {/* <BiSearch className="text-black text-2xl font-bold" />  */}
           
-          <span className="flex-grow text-center text-black text-2xl font-bold">InsightsBW</span> {/* Text (flex-grow for centering) */}
+          <span className="flex-grow text-center text-black text-2xl font-bold">Insights Business World</span> {/* Text (flex-grow for centering) */}
         {/* </Link> */}
       </div>
       <ul className="flex space-x-8 cursor-pointer text-black justify-center font-semibold text-[15px]">
