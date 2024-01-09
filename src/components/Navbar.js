@@ -19,6 +19,7 @@ function Navbar() {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/magazine">Magazine</Link></li>
         <li><Link to="/news">Business Women's Corner</Link></li>
+        <li><Link to="/RssFeeds">RssFeeds</Link></li>
         {/* <li><Link to="/sports">Sports</Link></li> */}
         <li><Link to="/leadership">Leadership</Link></li>
         <li><Link to="/about">About Us</Link></li>
